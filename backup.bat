@@ -4,8 +4,10 @@ $DBName = "FfhubDB"
 $BackupDir = "C:\Backups"  # Change to your desired backup directory
 $BackupFileName = "${DBName}_$(Get-Date -Format 'yyyyMMddHHmmss').bak"
 $BackupFilePath = Join-Path $BackupDir $BackupFileName
-$ContainerBackupPath = "/var/opt/mssql/backups/$BackupFileName"
-$SAPassword = "YourStrong@Password"  # Replace with your SA password
+$ContainerBackupPath = "/var/opt/mssql18/backups/$BackupFileName"
+
+# Retrieve the SQL password from the TeamCity parameter
+$SAPassword = "%sql_passwd%"  # This is where the password is passed as a parameter from TeamCity
 
 # Ensure the backup directory exists
 if (!(Test-Path -Path $BackupDir)) {
