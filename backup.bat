@@ -1,7 +1,7 @@
 # Configuration
 $ContainerName = "ffhub-sql"
 $DBName = "FfhubDB"
-$BackupDir = "C:\Backups"  # Change to your desired backup directory
+$BackupDir = "C:\Backups\OneDrive"  # Change to your desired backup directory
 $BackupFileName = "${DBName}_$(Get-Date -Format 'yyyyMMddHHmmss').bak"
 $BackupFilePath = Join-Path $BackupDir $BackupFileName
 $ContainerBackupPath = "/var/opt/mssql/$BackupFileName"
